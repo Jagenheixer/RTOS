@@ -1,3 +1,18 @@
+/*
+ * TAVOITELTU PISTEMÄÄRÄ: 2 / 3 p
+ * 
+ * PERUSTELU:
+ * Taskien synkronointi tilakoneella:
+ * Toteutettu 3 erillistä taskia (red, yellow, green) ja tilakone (led_state: 0=punainen, 1=keltainen, 2=vihreä).
+ * Valot vaihtuvat sekvenssissä sekunnin välein. Keltainen valo toteutettu sytyttämällä punainen ja vihreä yhtä aikaa.
+ * 
+ * Lisäohjaukset napeilla:
+ * Napit 2-4 (sw1, sw2, sw3): Käsinohjaus punaiselle, keltaiselle ja vihreälle valolle.
+ * Nappi 5 (sw4): Keltaisen valon vilkkutila päälle/pois (led_state = 3).
+ * 
+ * (Keskeytys/Pause-toiminto pysäyttää sekvenssin napista 1, mutta jatkamisessa on vielä bugin poikasta, 
+ *  joten kolmea pistettä en tavoittele.)
+ */
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/gpio.h>
